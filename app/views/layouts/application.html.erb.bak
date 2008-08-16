@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title><%= @pagetitle || (@page && @page.title) || 'Captured Moments Photography' %></title>
+		<%= stylesheet_link_tag 'cmp_main' %>
+		<%= javascript_include_tag :defaults %>
+  </head>
+  <body>
+		<div id='pagewrapper'>
+			<div id='header'>
+				<p>Captured Moments Photography</p>
+		  </div>
+			<div id='navbar'>
+			  <ul>
+			    <li><% link_to 'Home', view_page_path('home') %></li>
+				  <li><% link_to 'About Us', view_page_path('about') %></li>
+				  <li><% link_to 'Portfolios', view_page_path('portfolios') %></li>
+				  <li><% link_to 'Products', view_page_path('products') %></li>
+				  <li><% link_to 'Contact Us', view_page_path('contact') %></li>
+			    <!-- <li>
+			      <%# if logged_in? %>
+			        <%#= link_to "Log Out", logout_path %>
+			      <%# else %>
+			        <%#= link_to "Log In", login_path %>
+			      <%# end %>
+		      </li> -->
+				</ul>
+		  <div>
+		</div>
+		<div id='content'>
+		  <h2><%= flash[:notice] %></h2>
+      <%= yield %>
+		</div>
+		<div id='footer'>
+			<p>Your Captured Moments Photography &copy; 2005-2008.</p>
+		</div>
+  </body>
+</html>
